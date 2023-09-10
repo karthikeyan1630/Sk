@@ -1,0 +1,79 @@
+<!--<!doctype html>
+<head>
+	<script>
+	function getCalculation()
+	{
+		let num1=parseInt(document.getElementsByClassName('num')[0].value);
+		let num2=parseInt(document.getElementsByClassName('num')[1].value);
+		let calc= document.getElementsByName('Calculations');
+		for(let x of calc)
+			if(x.checked)
+				var ans=x.value;
+		if(ans=='Add'){
+		let res=num1+num2;
+		console.log(res);
+		}
+		else if(ans=='Subtraction')
+		console.log(num1-num2);
+		else if(ans=='Multiplication')
+		console.log(num1*num2);
+		else 
+		console.log(num1/num2);
+	}
+	</script>
+</head>
+<body>
+	<fieldset>
+		<div>
+		<input type="text"  value="Calculations heading label" disabled></div><br>s
+		<div>
+			<input type="text" class="num" placeholder="Enter 1st Number">
+			<input type="text" class="num" placeholder="Enter 2st Number">
+		</div><br>
+		<div>
+		<input type="button"  value="Result" onclick="getCalculation()">
+		<input type="text"  value="Set result value disabled mode" disabled></div><br>
+		<div>
+			<label for="add"><input type="radio" id="add" name="Calculations" value="Add"> Add </label>
+			<label for="sub"><input type="radio" id="sub" name="Calculations" value="Subtraction"> Subtraction </label>
+			<label for="mul"><input type="radio" id="mul" name="Calculations" value="Multiplication"> Multiplication </label>
+			<label for="div"><input type="radio" id="div" name="Calculations" value="Division"> Division </label>
+		</div><br>
+		
+	</fieldset>
+</body>-->
+<!doctype html>
+<html>
+<head>
+
+<title>dom calculation</title>
+
+</head>
+<body> 
+<h2>calculation
+</h2>
+<input  id="num1"type="text"  placeholder="enter the value" >
+<input id="num2"type="text"  placeholder="enter the value" > <br><br>
+
+<button  onclick="addition()">add</button>
+<button> sub</button>
+<button> multiple</button>
+<button> div</button><br><br>
+<button >result</button>
+<input type="text"id="btn" >
+<script>
+ function addition(){
+ let a=parseInt(document.getElementById("num1").value);
+ let b=parseInt(document.getElementById("num2").value); 
+ let result=a+b;
+  document.getElementById("btn").value=result;
+  console.log(result);
+ 
+ }
+ 
+</script>
+
+</body>
+
+
+</html>

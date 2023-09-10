@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DOM LEARNING</title>
+		<script>
+			function getData(){
+				let student = {
+					firstName : document.getElementById('fname').value,
+					lastName : document.getElementById('lname').value,
+					age : document.getElementById('age').value,
+				}
+				
+				if(student.firstName == ''){
+					alert('Please Enter 1st name');
+				}else if(student.lastName == ''){
+					alert('Please Enter last name');
+				}else if(student.age == ''){
+					alert('Please Enter age');
+				}else{
+					console.log(student.firstName);
+				}
+			}
+			function getNameData(){
+				let genderList = document.getElementsByName('gender');
+				for(let x of genderList){
+					if(x.checked){
+						var gender = x.value;
+					}
+				}
+				if(gender == null){
+					alert('select any one option')
+				}else{
+					console.log(gender);
+				}
+			}
+		
+			function getTagData(){
+				var paragraphList =  document.getElementsByTagName('p');
+				    var TextInsideLi = paragraphList[2].innerHTML;
+					console.log(TextInsideLi);
+				//for(let y of paragraphList){
+				//	console.log(y.innerText);
+				//}
+			}
+			function getClassName(){
+				let oddParaList = document.getElementsByClassName('odd');
+				//for(let z of oddParaList){
+					//console.log(z.innerText);
+				//}
+				var lis = oddParaList[1].innerText;
+				console.log(lis);
+			}
+			function getQueryData(){
+				let queryData = document.querySelector('[class]');
+				console.log(queryData);
+				
+				let queryAllData = document.querySelectorAll('[class]');
+				console.log(queryAllData);
+			}
+		</script>
+	</head>
+	<body>
+		<fieldset>
+			<label>First Name :</label>
+			<input id="fname" type="text">
+			<label>Second Name : </label>
+			<input id="lname" type="text" placeholder="Enter ur 2nd name" required>
+			<label>Age</label>
+			<input id="age" type="text" placeholder="Enter ur age" required>
+			<input type="button" value="GET ID DATA" onclick="getData()">
+		</fieldset>
+		<fieldset>
+			<label> Gender </label>
+			<input type="radio" id="male" name="gender" value="male"><label> Male </label>
+			<input type="radio" id="female" name="gender" value="female"><label> Female </label>
+			<input type="radio" id="transgender" name="gender" value="transgender"><label> Transgender </label>
+			<input type="button" onclick="getNameData()" value="GET NAME DATA">
+		</fieldset>
+		<fieldset>
+			<p>1 This is my para</p>
+			<p>2 This is my para</p>
+			<p>3 This is my para</p>
+			<p>4 This is my para</p>
+			<p>5 This is my para</p>
+			<button id="btn" onclick="getTagData()">GET TAG DATA</button>
+		</fieldset>
+		<fieldset>
+			<p id="para1" class="odd">1 This is my para</p>
+			<p id="para2" class="even">2 This is my para</p>
+			<p id="para3" class="odd">3 This is my para</p>
+			<p class="even">4 This is my para</p>
+			<p class="odd">5 This is my para</p>
+			<button id="btn" onclick="getClassName()">GET CLASS DATA</button>
+		</fieldset>
+		<fieldset>
+			<p class="odd">1 This is my para</p>
+			<p class="even">2 This is my para</p>
+			<p id="para3" class="odd">3 This is my para</p>
+			<p class="even">4 This is my para</p>
+			<p class="odd">5 This is my para</p>
+			<button onclick="getQueryData()">GET Query DATA</button>
+		</fieldset>
+	</body>
+</html>

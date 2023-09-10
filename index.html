@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+	<style>
+		.btn,.cl,.equals{
+		height:70px;
+		width:70px;
+		}
+		.calc{
+		width: 90px;
+		}
+		.input{
+		height : 30px;
+		}
+	</style>
+	
+</head>
+<body>
+		<fieldset style="background-color: gray" class="calc">
+				<h1 style="color : white" >CALCULATOR</h1>
+				<input type="text" size="37" class="input" id="clc"><br><br>
+				<div>
+				<button  class="btn" onclick="numCreation('+')">+</button>
+				<button  class="btn" onclick="numCreation('-')">-</button>
+				<button  class="btn"onclick="numCreation('*')">*</button>
+				<button  class="btn"onclick="numCreation('/')">/</button>
+				</div><br>
+				<div>
+				<button  class="btn" id="1" onclick="numCreation('1')">1</button>
+				<button  class="btn" id="2" onclick="numCreation('2')">2</button>
+				<button  class="btn" id="3" onclick="numCreation('3')">3</button>
+				<button  class="btn" id="4" onclick="numCreation('4')">4</button>
+				</div><br>
+				<div>
+				<button  class="btn" onclick="numCreation('5')">5</button>
+				<button  class="btn" onclick="numCreation('6')">6</button>
+				<button  class="btn"onclick="numCreation('7')">7</button>
+				<button  class="btn" onclick="numCreation('8')">8</button>
+				</div><br>
+				<div>
+				<button  class="btn" onclick="numCreation('9')">9</button>
+				<button  class="btn" onclick="numCreation('0')">0</button>
+				<button  class="equals" onclick="equals()">=</button>
+				<button  class="cl" onclick="cl()">CLR</button>
+				</div><br>
+		</fieldset>
+		
+</body>
+<script>
+	let clc=document.getElementById('clc');
+		function numCreation(btn)
+		{
+			clc.value+=btn;
+		}
+		function equals()
+		{
+			var a=clc.value;
+			clc.value=eval(a);
+		}
+		function cl()
+		{
+			document.getElementById('clc').value="";
+		}
+</script> 
